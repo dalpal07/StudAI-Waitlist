@@ -9,10 +9,13 @@ import dynamic from 'next/dynamic';
 
 const theme = createTheme({
     palette: {
-        secondary: {
-            main: '#A44CD3', // Custom secondary color
+        primary: {
+            main: '#4b4988'
         },
-    },
+        secondary: {
+            main: '#ffffff', // Custom secondary color
+        }
+    }
 });
 
 const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
@@ -42,12 +45,12 @@ const StyledForm = styled('form')({
 
 const StyledButton = styled(Button)(({ theme }) => ({
     color: 'white',
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
     '&:hover': {
-        backgroundColor: theme.palette.secondary.dark,
+        backgroundColor: theme.palette.primary.dark,
     },
     '&:not(:hover)': {
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.primary.main,
     },
 }));
 
