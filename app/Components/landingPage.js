@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 import ConfirmationPopup from "@/app/Components/confirmationPopup";
 import dynamic from 'next/dynamic';
+import Navbar from "@/app/Components/navBar";
 
 const theme = createTheme({
     palette: {
@@ -79,6 +80,7 @@ const LandingPage = () => {
 
     return (
         <ThemeProvider theme={theme}>
+            <Navbar/>
             <RootDiv>
                 <Typography variant="h1" align="center">StudAI</Typography>
                 <Typography variant="body1" align="center">Join the waitlist, and make your data work for you</Typography>
