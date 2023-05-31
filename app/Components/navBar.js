@@ -1,13 +1,18 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import {AppBar, Toolbar, Typography, Button, styled} from '@mui/material';
 import Link from 'next/link';
+
+const LogoImage = styled('img')({
+    width: '50px',
+    height: 'auto'
+})
 
 const Navbar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    My App
+                    <LogoImage src="/stud.svg" alt="Logo"/>
                 </Typography>
                 <Link href="/" passHref>
                     <Button color="inherit">Home</Button>

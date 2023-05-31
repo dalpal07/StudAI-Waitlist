@@ -11,7 +11,7 @@ import Navbar from "@/app/Components/navBar";
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#4b4988'
+            main: '#b0b0b0'
         },
         secondary: {
             main: '#ffffff', // Custom secondary color
@@ -23,10 +23,11 @@ const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
 
 const RootDiv = styled('div')({
     paddingTop: '25vh',
-    backgroundImage: `url('/studAIBackground.jpeg')`,
+    //backgroundImage: `url('/studAIBackground.jpeg')`,
+    backgroundColor: "#3d423d",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '100vh',
+    height: '92vh',
 });
 
 const EmailBox = styled('input')({
@@ -55,6 +56,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
     },
 }));
 
+const StyledTypography = styled(Typography)(({
+    color: "#caffc1"
+}))
+
 const LandingPage = () => {
     const [email, setEmail] = useState('');
     const [openDialog, setOpenDialog] = useState(false);
@@ -80,9 +85,8 @@ const LandingPage = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Navbar/>
             <RootDiv>
-                <Typography variant="h1" align="center">StudAI</Typography>
+                <StyledTypography variant="h1" align="center">StudAI</StyledTypography>
                 <Typography variant="body1" align="center">Join the waitlist, and make your data work for you</Typography>
                 <StyledForm onSubmit={handleSubmit}>
                     <EmailBox
