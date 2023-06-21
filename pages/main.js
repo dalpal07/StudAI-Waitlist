@@ -4,9 +4,19 @@ import React, { useState } from 'react';
 import {
     styled, Typography, createTheme, ThemeProvider
 } from "@mui/material";
-import ConfirmationPopup from "@/app/Components/confirmationPopup";
+import ConfirmationPopup from "./confirmationPopup";
 import dynamic from 'next/dynamic';
-import Navbar from "@/app/Components/navBar";
+// import clientPromise from "../lib/mongodb";
+// export async function getServerSideProps() {
+//     try {
+//         const client = await clientPromise;
+//         const db = client.db("Waitlist");
+//
+//     } catch(e) {
+//         console.error(e);
+//     }
+// }
+
 
 const theme = createTheme({
     palette: {
@@ -23,11 +33,11 @@ const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
 
 const RootDiv = styled('div')({
     paddingTop: '25vh',
-    //backgroundImage: `url('/studAIBackground.jpeg')`,
-    backgroundColor: "#3d423d",
+    // background: 'linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0) 57.81%, rgba(83, 183, 83, 0.16) 100%)',
+    background: 'linear-gradient(to bottom, #F2F2F2, #53B75329)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '92vh',
+    height: '65vh',
 });
 
 const EmailBox = styled('input')({
@@ -60,7 +70,7 @@ const StyledTypography = styled(Typography)(({
     color: "#caffc1"
 }))
 
-const LandingPage = () => {
+const Main = () => {
     const [email, setEmail] = useState('');
     const [openDialog, setOpenDialog] = useState(false);
 
@@ -68,11 +78,19 @@ const LandingPage = () => {
         setEmail(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         // Add your logic here to handle the form submission,
         // such as sending the email to a backend API or storing it in a database
+        try {
+            // const client = await clientPromise;
+            // const db = client.db("Waitlist")
+            // console.log("Adding to database: " + e);
+
+        } catch(error) {
+            console.error(error);
+        }
 
         // Reset the form after submission
         setEmail('');
@@ -107,4 +125,4 @@ const LandingPage = () => {
     );
 };
 
-export default LandingPage;
+export default Main;

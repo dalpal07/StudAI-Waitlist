@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Container, createTheme, styled, ThemeProvider, Typography} from '@mui/material';
-import Navbar from '../app/Components/navBar';
+import Navbar from './navBar';
 import '../app/Styles/custom.css';
 
 const theme = createTheme({

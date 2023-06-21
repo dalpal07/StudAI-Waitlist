@@ -14,10 +14,10 @@ const Navbar = () => {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <LogoImage src="/stud.svg" alt="Logo"/>
                 </Typography>
-                <Link href="/" passHref>
+                <Link href="/Users/collinmorrison/studAI/studai-waitlist/main" passHref>
                     <Button color="inherit">Home</Button>
                 </Link>
-                <Link href="/about" passHref>
+                <Link href="/pages/about" passHref>
                     <Button color="inherit">About</Button>
                 </Link>
                 <Link href="/contact" passHref>
