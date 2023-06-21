@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 import ConfirmationPopup from "./confirmationPopup";
 import dynamic from 'next/dynamic';
+import Image from 'next/image'
 // import clientPromise from "../lib/mongodb";
 // export async function getServerSideProps() {
 //     try {
@@ -37,7 +38,7 @@ const RootDiv = styled('div')({
     background: 'linear-gradient(to bottom, #F2F2F2, #53B75329)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '65vh',
+    height: '67vh',
 });
 
 const EmailBox = styled('input')({
@@ -66,9 +67,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
     },
 }));
 
-const StyledTypography = styled(Typography)(({
-    color: "#caffc1"
-}))
+const DivContainer = styled('div')({
+    display: 'flex',
+    justifyContent: 'center'
+});
 
 const Main = () => {
     const [email, setEmail] = useState('');
@@ -104,7 +106,17 @@ const Main = () => {
     return (
         <ThemeProvider theme={theme}>
             <RootDiv>
-                <StyledTypography variant="h1" align="center">StudAI</StyledTypography>
+                <DivContainer>
+                    {/*<StyledTypographyStud variant="h1" align="center">STUD</StyledTypographyStud>*/}
+                    {/*<StyledTypographyAI variant="h1" align="center">AI</StyledTypographyAI>*/}
+                    <Image
+                        src="/studLarge.png"
+                        width={400}
+                        height={72.42}
+                        style={{
+                            paddingBottom: '20px'
+                        }}/>
+                </DivContainer>
                 <Typography variant="body1" align="center">Join the waitlist, and make your data work for you</Typography>
                 <StyledForm onSubmit={handleSubmit}>
                     <EmailBox

@@ -12,7 +12,7 @@ const Navbar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <LogoImage src="/stud.svg" alt="Logo"/>
+                    <LogoImage src="/stud.png" alt="Logo"/>
                 </Typography>
                 <Link href="/Users/collinmorrison/studAI/studai-waitlist/main" passHref>
                     <Button color="inherit">Home</Button>
