@@ -5,40 +5,10 @@ import Main from "./main";
 import Navbar from "./navBar";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import clientPromise from "../lib/mongodb";
+import dbConnect from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import Email from '../models/Email'
 
-type ConnectionStatus = {
-    isConnected: boolean
-}
-
-export const getServerSideProps: GetServerSideProps<
-    ConnectionStatus
-    > = async () => {
-    try {
-        await clientPromise
-        // `await clientPromise` will use the default database passed in the MONGODB_URI
-        // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
-        //
-        // `const client = await clientPromise`
-        // `const db = client.db("myDatabase")`
-        //
-        // Then you can execute queries against your database like so:
-        // db.find({}) or any of the MongoDB Node Driver commands
-
-        const client = await clientPromise
-        const db = client.db("Waitlist")
-
-        return {
-            props: { isConnected: true },
-        }
-    } catch (e) {
-        console.error(e)
-        return {
-            props: { isConnected: false },
-        }
-    }
-}
 
 const theme = createTheme({
     palette: {
@@ -46,14 +16,12 @@ const theme = createTheme({
             main: '#646464'
         },
         secondary: {
-            main: '#ffffff', // Custom secondary color
+            main: '#F2F2F2', // Custom secondary color
         }
     }
 });
 
-export default function Home({
-    isConnected,
-                             }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home() {
   return (
       <ThemeProvider theme={theme}>
         <div>

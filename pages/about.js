@@ -3,7 +3,7 @@
 import React from 'react';
 import {Container, createTheme, styled, ThemeProvider, Typography} from '@mui/material';
 import Navbar from './navBar';
-import '../app/Styles/custom.css';
+// import '../app/Styles/custom.css';
 
 const theme = createTheme({
     palette: {

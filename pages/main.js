@@ -7,16 +7,7 @@ import {
 import ConfirmationPopup from "./confirmationPopup";
 import dynamic from 'next/dynamic';
 import Image from 'next/image'
-// import clientPromise from "../lib/mongodb";
-// export async function getServerSideProps() {
-//     try {
-//         const client = await clientPromise;
-//         const db = client.db("Waitlist");
-//
-//     } catch(e) {
-//         console.error(e);
-//     }
-// }
+import Form from "../components/Form";
 
 
 const theme = createTheme({
@@ -25,7 +16,10 @@ const theme = createTheme({
             main: '#b0b0b0'
         },
         secondary: {
-            main: '#ffffff', // Custom secondary color
+            main: '#E3E3E3'
+        },
+        info: {
+            main: '#3F3636'
         }
     }
 });
@@ -34,38 +28,11 @@ const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
 
 const RootDiv = styled('div')({
     paddingTop: '25vh',
-    // background: 'linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0) 57.81%, rgba(83, 183, 83, 0.16) 100%)',
-    background: 'linear-gradient(to bottom, #F2F2F2, #53B75329)',
+    background: 'linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0) 57.81%, rgba(83, 183, 83, 0.16) 100%)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: '67vh',
 });
-
-const EmailBox = styled('input')({
-    borderRadius: '5px',
-    height: '2em',
-    width: '20em',
-    marginTop: '2.5px',
-    marginRight: '1vw',
-    color: 'black'
-})
-
-const StyledForm = styled('form')({
-    marginTop: '3vh',
-    display: 'flex',
-    justifyContent: 'center'
-})
-
-const StyledButton = styled(Button)(({ theme }) => ({
-    color: 'white',
-    backgroundColor: theme.palette.primary.main,
-    '&:hover': {
-        backgroundColor: theme.palette.primary.dark,
-    },
-    '&:not(:hover)': {
-        backgroundColor: theme.palette.primary.main,
-    },
-}));
 
 const DivContainer = styled('div')({
     display: 'flex',
@@ -73,12 +40,11 @@ const DivContainer = styled('div')({
 });
 
 const Main = () => {
-    const [email, setEmail] = useState('');
     const [openDialog, setOpenDialog] = useState(false);
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
+    const emailForm = {
+        email: ''
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -107,8 +73,6 @@ const Main = () => {
         <ThemeProvider theme={theme}>
             <RootDiv>
                 <DivContainer>
-                    {/*<StyledTypographyStud variant="h1" align="center">STUD</StyledTypographyStud>*/}
-                    {/*<StyledTypographyAI variant="h1" align="center">AI</StyledTypographyAI>*/}
                     <Image
                         src="/studLarge.png"
                         width={400}
@@ -118,16 +82,7 @@ const Main = () => {
                         }}/>
                 </DivContainer>
                 <Typography variant="body1" align="center">Join the waitlist, and make your data work for you</Typography>
-                <StyledForm onSubmit={handleSubmit}>
-                    <EmailBox
-                        type="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        placeholder="Enter your email address"
-                        required
-                    />
-                    <StyledButton variant="contained"  type="submit">Join Now</StyledButton>
-                </StyledForm>
+                <Form userForm={emailForm}/>
                 <ConfirmationPopup
                     open={openDialog}
                     onClose={handleDialogClose}
