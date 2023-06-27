@@ -38,7 +38,6 @@ const Form = ({ userForm }) => {
     }
 
     const handleChange = (e) => {
-        console.log("Changing email to: " + e.target.value)
         setForm({
             ...form,
             ["email"]: e.target.value

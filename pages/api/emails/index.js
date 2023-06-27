@@ -3,14 +3,12 @@ import Email from '../../../models/Email'
 
 export default async function handler(req, res) {
     const { method } = req
-    console.log("Getting Database connection...")
     await dbConnect()
-    console.log("Database connection successful!")
+
 
     switch (method) {
         case 'POST':
             try {
-                console.log("posting " + req.body + "...")
                 const email = await Email.create(
                     req.body
                 )
