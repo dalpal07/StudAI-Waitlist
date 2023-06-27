@@ -5,9 +5,9 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography, 
 
 const StyledDialog = styled(Dialog)({
     "& .MuiPaper-root": {
-        backgroundColor: "#4b4988", // Set the desired background color here
+        backgroundColor: "#E3E3E3", // Set the desired background color here
         borderRadius: "5px",
-        color: "white"
+        color: "#3F3636"
     }
 })
 
@@ -19,7 +19,7 @@ const ConfirmationPopup = ({ open, onClose }) => {
                 <Typography variant="body1" align="center">Clean data awaits you</Typography>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose} color="secondary">Done</Button>
+                <Button onClick={onClose} color="primary">Done</Button>
             </DialogActions>
         </StyledDialog>
     );

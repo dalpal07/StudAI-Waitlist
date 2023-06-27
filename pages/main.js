@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import {
     styled, Typography, createTheme, ThemeProvider
 } from "@mui/material";
-import ConfirmationPopup from "./confirmationPopup";
-import dynamic from 'next/dynamic';
 import Image from 'next/image'
 import Form from "../components/Form";
 
@@ -13,7 +11,7 @@ import Form from "../components/Form";
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#b0b0b0'
+            main: '#3F3636'
         },
         secondary: {
             main: '#E3E3E3'
@@ -23,8 +21,6 @@ const theme = createTheme({
         }
     }
 });
-
-const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
 
 const RootDiv = styled('div')({
     paddingTop: '25vh',
@@ -46,29 +42,6 @@ const Main = () => {
         email: ''
     }
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-
-        // Add your logic here to handle the form submission,
-        // such as sending the email to a backend API or storing it in a database
-        try {
-            // const client = await clientPromise;
-            // const db = client.db("Waitlist")
-            // console.log("Adding to database: " + e);
-
-        } catch(error) {
-            console.error(error);
-        }
-
-        // Reset the form after submission
-        setEmail('');
-        setOpenDialog(true);
-    };
-
-    const handleDialogClose = () => {
-        setOpenDialog(false);
-    }
-
     return (
         <ThemeProvider theme={theme}>
             <RootDiv>
@@ -83,10 +56,6 @@ const Main = () => {
                 </DivContainer>
                 <Typography variant="body1" align="center">Join the waitlist, and make your data work for you</Typography>
                 <Form userForm={emailForm}/>
-                <ConfirmationPopup
-                    open={openDialog}
-                    onClose={handleDialogClose}
-                />
             </RootDiv>
         </ThemeProvider>
     );

@@ -1,13 +1,9 @@
 'use client';
 
-import Image from 'next/image'
 import Main from "./main";
 import Navbar from "./navBar";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import dbConnect from "../lib/mongodb";
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
-import Email from '../models/Email'
 
 
 const theme = createTheme({

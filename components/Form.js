@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { styled, Button } from "@mui/material";
-// import email from "../models/Email";
+import ConfirmationPopup from "../pages/confirmationPopup";
 
 const Form = ({ userForm }) => {
     const router = useRouter()
     const contentType = 'application/json'
     const [message, setMessage] = useState('')
-    // const [email, setEmail] = useState('')
+    const [openDialog, setOpenDialog] = useState(false);
     const [form, setForm] = useState({
         email: userForm.email
     })
 
+    const handleDialogClose = () => {
+        setOpenDialog(false)
+    }
+
     const postData = async (email) => {
         try {
-            console.log("In Post Data...")
             const res = await fetch('/api/emails', {
                 method: 'POST',
                 headers: {
@@ -45,10 +48,12 @@ const Form = ({ userForm }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         postData(form)
+        setOpenDialog(true)
         setForm({
             ...form,
             ["email"]: ""
         })
+
     }
 
     const StyledForm = styled('form')({
@@ -89,6 +94,10 @@ const Form = ({ userForm }) => {
                 required
             />
             <StyledButton variant="contained"  type="submit">Join Now</StyledButton>
+            <ConfirmationPopup
+                open={openDialog}
+                onClose={handleDialogClose}
+            />
         </StyledForm>
     )
 }
