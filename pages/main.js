@@ -39,7 +39,10 @@ const Main = () => {
     const [openDialog, setOpenDialog] = useState(false);
 
     const emailForm = {
-        email: ''
+        email: '',
+        firstName: '',
+        lastName: '',
+        companyName: ''
     }
 
     return (
