@@ -169,7 +169,10 @@ const Form = ({ userForm }) => {
         setOpenDialog(true)
         setForm({
             ...form,
-            ["email"]: ""
+            ["email"]: "",
+            ["firstName"]: "",
+            ["lastName"]: "",
+            ["companyName"]: ""
         })
 
     }
