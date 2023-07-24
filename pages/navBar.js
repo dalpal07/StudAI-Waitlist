@@ -17,12 +17,12 @@ const Navbar = () => {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <LogoImage src="/stud.png" alt="Logo"/>
                 </Typography>
-                {/*<Link href="/" passHref>*/}
-                {/*    <Button color="info">Home</Button>*/}
-                {/*</Link>*/}
-                {/*<Link href="/pages/about" passHref>*/}
-                {/*    <Button color="secondary">About</Button>*/}
-                {/*</Link>*/}
+                <Link href="/" passHref>
+                    <Button color="primary">Home</Button>
+                </Link>
+                <Link href="/about" passHref>
+                    <Button color="primary">About</Button>
+                </Link>
                 {/*<Link href="/contact" passHref>*/}
                 {/*    <Button color="secondary">Contact</Button>*/}
                 {/*</Link>*/}

@@ -8,44 +8,52 @@ import Navbar from './navBar';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#4b4988'
+            main: '#646464'
         },
         secondary: {
-            main: '#ffffff', // Custom secondary color
+            main: '#F2F2F2', // Custom secondary color
         }
     }
 });
 
 const RootDiv = styled('div')({
-    paddingTop: '25vh',
-    // backgroundImage: `url('/studAIBackground.jpeg')`,
-    backgroundColor: "#3d423d",
+    background: 'linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0) 57.81%, rgba(83, 183, 83, 0.16) 100%)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '92vh',
+    height: '100vh',
+});
+
+const PaddingDiv = styled('div')({
+    paddingTop: '25vh',
 });
 
 
 const AboutPage = () => {
     return (
         <ThemeProvider theme={theme}>
-                <Navbar />
                 <RootDiv>
+                    <Navbar />
+                    <PaddingDiv>
                     <Container maxWidth="sm">
-                        <Typography variant="h2" align="center" gutterBottom>
+                        <Typography variant ="h2" align="center" gutterBottom>
                             About Us
                         </Typography>
                         <Typography variant="body1" align="justify" paragraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus purus ac ex
-                            tincidunt, vel varius sapien lacinia. Integer non enim non mauris fermentum commodo
-                            vitae at justo. Aliquam erat volutpat. In dapibus est at maximus iaculis.
+                            Are you tired of constantly trying to reformat, dedupe, and standardize your data?
+                            Do you struggle to maintain data cleanliness in your CRM? Are you at your wits end
+                            combing through excel sheets or even worse, salesforce data sets thousands of rows long,
+                            only to make a few simple changes? Are your reports consistently off by a significant margin,
+                            or inaccurate altogether due to bad data?
                         </Typography>
                         <Typography variant="body1" align="justify" paragraph>
-                            Mauris id felis id mauris suscipit laoreet. Aliquam dignissim pulvinar ullamcorper.
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                            Fusce elementum auctor enim id rhoncus. Aliquam sodales odio et sagittis consectetur.
+                            Stud AI is here to solve this problem! With the power of AI,
+                            tasks like these that used to take hours can now be done in seconds. No more mind numbing menial tasks,
+                            no more putting off cleaning your data until the end of the quarter,
+                            and no more ineffective meetings to fix standardization issues.
+                            StudAI’s goal is to be your one tool for all things data operations.
                         </Typography>
                     </Container>
+                    </PaddingDiv>
                 </RootDiv>
         </ThemeProvider>
     );

@@ -21,7 +21,7 @@ export default function Home() {
   return (
       <ThemeProvider theme={theme}>
         <div>
-            <Navbar/>
+            {/*<Navbar/>*/}
             <Main/>
 
         </div>

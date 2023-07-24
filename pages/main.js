@@ -6,31 +6,29 @@ import {
 } from "@mui/material";
 import Image from 'next/image'
 import Form from "../components/Form";
+import Navbar from "./navBar";
 
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#3F3636'
+            main: '#646464'
         },
         secondary: {
-            main: '#E3E3E3'
-        },
-        info: {
-            main: '#3F3636'
+            main: '#F2F2F2', // Custom secondary color
         }
     }
 });
 
 const RootDiv = styled('div')({
-    paddingTop: '25vh',
     background: 'linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0) 57.81%, rgba(83, 183, 83, 0.16) 100%)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '67vh',
+    height: '100vh',
 });
 
 const DivContainer = styled('div')({
+    paddingTop: '25vh',
     display: 'flex',
     justifyContent: 'center'
 });
@@ -48,6 +46,7 @@ const Main = () => {
     return (
         <ThemeProvider theme={theme}>
             <RootDiv>
+                <Navbar/>
                 <DivContainer>
                     <Image
                         src="/studLarge.png"
