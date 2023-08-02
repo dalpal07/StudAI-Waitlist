@@ -49,9 +49,9 @@ const Main = () => {
                 <Navbar/>
                 <DivContainer>
                     <Image
-                        src="/studLarge.png"
-                        width={400}
-                        height={72.42}
+                        src={"/studFullLogo.png"}
+                        width={361.9}
+                        height={77}
                         style={{
                             paddingBottom: '20px'
                         }}/>

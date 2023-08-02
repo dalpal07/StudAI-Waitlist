@@ -24,7 +24,8 @@ const RootDiv = styled('div')({
 });
 
 const PaddingDiv = styled('div')({
-    paddingTop: '25vh',
+    paddingTop: '10vh',
+    overflowY: 'auto'
 });
 
 
@@ -39,18 +40,26 @@ const AboutPage = () => {
                             About Us
                         </Typography>
                         <Typography variant="body1" align="justify" paragraph>
-                            Are you tired of constantly trying to reformat, dedupe, and standardize your data?
-                            Do you struggle to maintain data cleanliness in your CRM? Are you at your wits end
-                            combing through excel sheets or even worse, salesforce data sets thousands of rows long,
-                            only to make a few simple changes? Are your reports consistently off by a significant margin,
-                            or inaccurate altogether due to bad data?
+                            Are you tired of constantly struggling with data formatting, deduplication,
+                            and standardization problem? Is maintaining data cleanliness in your CRM a constant headache?
+                            Do you find yourself spending countless hours combing through lengthy Excel sheets or Salesforce
+                            datasets, only to make a few simple changes? Are your reports consistently inaccurate or significantly
+                            skewed due to flawed data?
                         </Typography>
                         <Typography variant="body1" align="justify" paragraph>
-                            Stud AI is here to solve this problem! With the power of AI,
-                            tasks like these that used to take hours can now be done in seconds. No more mind numbing menial tasks,
-                            no more putting off cleaning your data until the end of the quarter,
-                            and no more ineffective meetings to fix standardization issues.
-                            StudAI’s goal is to be your one tool for all things data operations.
+                            Say goodbye to these frustrations because Stud is here to provide
+                            the ultimate solution! Leveraging the power of AI, Stud streamlines tasks that
+                            once consumed hours, completing them in a matter of seconds. Gone are the days
+                            of mind-numbing, repetitive work.  Stop procrastinating cleaning your data and get
+                            Stud AI, your go-to tool for all data operations.
+                        </Typography>
+                        <Typography variant="h2" align="center" width="70vw">
+                            What Stud AI aims to do:
+                        </Typography>
+                        <Typography>
+                            Unmatched Efficiency: Save precious time and resources with our lightning-fast AI-driven processes. What once took hours now takes seconds.
+                            Data Accuracy: Eliminate the headaches caused by unreliable data. Stud AI will ensure your reports and analytics are based on a foundation of clean, standardized data.
+                            Seamless Integration: Stud AI will seamlessly integrate with popular platforms and tools, making implementation a breeze.
                         </Typography>
                     </Container>
                     </PaddingDiv>
