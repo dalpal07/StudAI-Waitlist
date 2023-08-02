@@ -53,14 +53,14 @@ const AboutPage = () => {
                             of mind-numbing, repetitive work.  Stop procrastinating cleaning your data and get
                             Stud AI, your go-to tool for all data operations.
                         </Typography>
-                        <Typography variant="h2" align="center" width="70vw">
-                            What Stud AI aims to do:
-                        </Typography>
-                        <Typography>
-                            Unmatched Efficiency: Save precious time and resources with our lightning-fast AI-driven processes. What once took hours now takes seconds.
-                            Data Accuracy: Eliminate the headaches caused by unreliable data. Stud AI will ensure your reports and analytics are based on a foundation of clean, standardized data.
-                            Seamless Integration: Stud AI will seamlessly integrate with popular platforms and tools, making implementation a breeze.
-                        </Typography>
+                        {/*<Typography variant="h2" align="center" width="70vw">*/}
+                        {/*    What Stud AI aims to do:*/}
+                        {/*</Typography>*/}
+                        {/*<Typography>*/}
+                        {/*    Unmatched Efficiency: Save precious time and resources with our lightning-fast AI-driven processes. What once took hours now takes seconds.*/}
+                        {/*    Data Accuracy: Eliminate the headaches caused by unreliable data. Stud AI will ensure your reports and analytics are based on a foundation of clean, standardized data.*/}
+                        {/*    Seamless Integration: Stud AI will seamlessly integrate with popular platforms and tools, making implementation a breeze.*/}
+                        {/*</Typography>*/}
                     </Container>
                     </PaddingDiv>
                 </RootDiv>
